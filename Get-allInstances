@@ -24,7 +24,7 @@ def ec2ListByRegion(regionName,accountid):
         saveToDynamoDB(instanceid,instancenaame,instancetype,regionName,accountid)
         
 def saveToDynamoDB(instanceid,instancenaame,instancetype,regionName,accountid):
-    table = dynamodbResource.Table('EC2Data')
+    table = dynamodbResource.Table('EC2Information')
     response = table.put_item(
     Item={
               'instanceid':instanceid,
